@@ -69,10 +69,6 @@
 }
 
 @layer base {
-  html {
-    scroll-behavior: smooth;
-  }
-
   body {
     @apply bg-[#ffffff] text-[#09090b] antialiased selection:bg-blue-500/20 selection:text-blue-700;
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
@@ -92,11 +88,23 @@
 
 @layer utilities {
   .glass {
-    @apply bg-white/40 backdrop-blur-[24px] transform-gpu will-change-transform border border-white/60 shadow-[0_8px_32px_rgba(0, 0, 0, 0.06)];
+    background-color: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    transform: translateZ(0);
+    will-change: transform;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
   }
 
   .glass-dark {
-    @apply bg-[#09090b]/40 backdrop-blur-[24px] transform-gpu will-change-transform border border-white/10 shadow-[0_8px_32px_rgba(0, 0, 0, 0.3)];
+    background-color: rgba(9, 9, 11, 0.4);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    transform: translateZ(0);
+    will-change: transform;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
   }
 
   .glass-panel {
