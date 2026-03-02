@@ -3,10 +3,10 @@ export function Footer() {
     const currentYear = new Date().getFullYear();
 
     return (
-        <footer id="contact" className="bg-[#ffffff] pt-32 pb-16 overflow-hidden border-t border-gray-100">
+        <footer id="contact" className="bg-[#ffffff] pt-16 md:pt-24 lg:pt-32 pb-16 overflow-hidden border-t border-gray-100">
             <div className="max-w-[76rem] mx-auto px-6 lg:px-8 relative z-10">
 
-                <div className="grid grid-cols-2 lg:grid-cols-6 gap-12 lg:gap-16 mb-24 lg:mb-32">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-10 lg:gap-16 mb-12 lg:mb-20">
                     <div className="col-span-2 lg:col-span-2">
                         <div className="flex flex-col items-start gap-0.5 mb-8 cursor-pointer group w-fit">
                             <div className="flex items-end leading-none">
@@ -33,8 +33,8 @@ export function Footer() {
                         <p className="text-[#4b5563] text-[16px] font-light max-w-sm leading-[1.8] pr-4">
                             Your trusted local partner for selling used IT assets, laptops, desktops, and corporate equipment.
                         </p>
-                        <div className="mt-8">
-                            <a href="#contact" className="inline-flex items-center justify-center px-8 py-3.5 border border-transparent text-[15px] font-bold rounded-xl text-white bg-[#09090b] hover:bg-gray-800 shadow-[0_4px_14px_0_rgba(0,0,0,0.1)] hover:-translate-y-0.5 transition-all duration-300">
+                        <div className="mt-8 flex flex-col gap-5">
+                            <a href="https://wa.me/918957575798" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center px-8 py-3.5 border border-transparent text-[15px] font-bold rounded-xl text-white bg-[#09090b] hover:bg-gray-800 shadow-[0_4px_14px_0_rgba(0,0,0,0.1)] hover:-translate-y-0.5 transition-all duration-300">
                                 Contact Us Today
                             </a>
                         </div>
@@ -59,23 +59,48 @@ export function Footer() {
                     </div>
 
                     <div className="col-span-1 lg:col-span-1">
-                        <h4 className="font-bold text-[#09090b] text-[15px] mb-8 tracking-tight">Location</h4>
+                        <h4 className="font-bold text-[#09090b] text-[15px] mb-8 tracking-tight">Quick Links</h4>
                         <ul className="space-y-5 text-[15px] text-[#4b5563] font-medium">
-                            <li>[Add City Name]</li>
-                            <li>[Add Full Address]</li>
-                            <li>India</li>
+                            <li><a href="#home" className="hover:text-blue-600 transition-colors hover:translate-x-1 inline-block transform duration-300">Home</a></li>
+                            <li><a href="#services" className="hover:text-blue-600 transition-colors hover:translate-x-1 inline-block transform duration-300">Our Services</a></li>
+                            <li><a href="#how-it-works" className="hover:text-blue-600 transition-colors hover:translate-x-1 inline-block transform duration-300">How It Works</a></li>
+                            <li><a href="#clients" className="hover:text-blue-600 transition-colors hover:translate-x-1 inline-block transform duration-300">Client Reviews</a></li>
+                            <li><a href="#contact" className="hover:text-blue-600 transition-colors hover:translate-x-1 inline-block transform duration-300">Contact Us</a></li>
                         </ul>
                     </div>
 
+                    {/* Rohan: SEO content pages column for better search indexing */}
                     <div className="col-span-1 lg:col-span-1">
-                        <h4 className="font-bold text-[#09090b] text-[15px] mb-8 tracking-tight">Quick Links</h4>
+                        <h4 className="font-bold text-[#09090b] text-[15px] mb-8 tracking-tight">We Buy</h4>
                         <ul className="space-y-5 text-[15px] text-[#4b5563] font-medium">
-                            <li><a href="#home" className="hover:text-blue- transition-colors hover:translate-x-1 inline-block transform duration-300">Home</a></li>
-                            <li><a href="#services" className="hover:text-blue- transition-colors hover:translate-x-1 inline-block transform duration-300">Services</a></li>
-                            <li><a href="#how-it-works" className="hover:text-blue- transition-colors hover:translate-x-1 inline-block transform duration-300">How It Works</a></li>
-                            <li><a href="#clients" className="hover:text-blue- transition-colors hover:translate-x-1 inline-block transform duration-300">Clients</a></li>
-                            <li><a href="#contact" className="hover:text-blue- transition-colors hover:translate-x-1 inline-block transform duration-300">Contact Us</a></li>
+                            <li><a href="#services" className="hover:text-blue-600 transition-colors hover:translate-x-1 inline-block transform duration-300">Used Laptops</a></li>
+                            <li><a href="#services" className="hover:text-blue-600 transition-colors hover:translate-x-1 inline-block transform duration-300">Used Desktops</a></li>
+                            <li><a href="#services" className="hover:text-blue-600 transition-colors hover:translate-x-1 inline-block transform duration-300">Bulk IT Clearance</a></li>
+                            <li><a href="#services" className="hover:text-blue-600 transition-colors hover:translate-x-1 inline-block transform duration-300">Corporate Disposal</a></li>
+                            <li><a href="#services" className="hover:text-blue-600 transition-colors hover:translate-x-1 inline-block transform duration-300">MacBooks &amp; iMacs</a></li>
                         </ul>
+                    </div>
+                </div>
+
+                {/* Integrated Google Map - Sanket */}
+                <div className="w-full h-[320px] mb-20 rounded-[32px] overflow-hidden border border-gray-200 shadow-[0_8px_30px_rgba(0,0,0,0.04)] relative group transform-gpu">
+                    {/* Inner shadow for depth */}
+                    <div className="absolute inset-0 shadow-[inset_0_0_0_1px_rgba(0,0,0,0.05)] rounded-[32px] pointer-events-none z-10"></div>
+
+                    <iframe
+                        title="WeBuy Tech Store Location"
+                        src="https://maps.google.com/maps?q=18.620586,73.8038785&z=17&ie=UTF8&iwloc=&output=embed"
+                        width="100%"
+                        height="100%"
+                        style={{ border: 0 }}
+                        loading="lazy"
+                        referrerPolicy="no-referrer-when-downgrade"
+                        className="absolute inset-0 w-full h-full grayscale-[10%] contrast-[1.05] group-hover:grayscale-0 transition-all duration-700"
+                    ></iframe>
+
+                    {/* Hover overlay hint */}
+                    <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-md px-4 py-2 rounded-full shadow-sm border border-gray-100 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-20">
+                        <span className="text-[13px] font-bold text-gray-800 tracking-tight">Interactive Map</span>
                     </div>
                 </div>
 

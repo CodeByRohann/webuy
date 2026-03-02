@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { Laptop, Monitor, Package, ShieldCheck, Truck, Phone, ArrowRight } from 'lucide-react';
 import { ServiceCarousel, type Service } from '@/components/ui/services-card';
+import { trackWhatsAppClick } from '../utils/analytics';
 
 const featuresData: Service[] = [
     {
@@ -47,7 +48,7 @@ const featuresData: Service[] = [
 
 export function Features() {
     return (
-        <section id="services" className="py-24 lg:py-40 bg-[#ffffff] relative overflow-hidden">
+        <section id="services" className="py-16 md:py-24 lg:py-40 bg-[#ffffff] relative overflow-hidden">
             <div className="absolute inset-0 noise-bg"></div>
 
             {/* Background ambient glow */}
@@ -94,11 +95,12 @@ export function Features() {
                         href="https://wa.me/918957575798"
                         target="_blank"
                         rel="noopener noreferrer"
+                        onClick={() => trackWhatsAppClick('features_banner')}
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.3, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-                        className="rounded-[40px] p-[1px] relative overflow-hidden group cursor-pointer shadow-[0_20px_50px_rgba(37,99,235,0.15)] hover:shadow-[0_40px_80px_rgba(37,99,235,0.25)] hover:-translate-y-2 transition-all duration-700 min-h-[280px] block"
+                        className="rounded-[28px] md:rounded-[40px] p-[1px] relative overflow-hidden group cursor-pointer shadow-[0_20px_50px_rgba(37,99,235,0.15)] hover:shadow-[0_40px_80px_rgba(37,99,235,0.25)] hover:-translate-y-2 transition-all duration-700 min-h-[240px] md:min-h-[280px] block"
                     >
                         {/* Rich mesh gradient background - Sanket */}
                         <div className="absolute inset-0 bg-[#09090b]">
@@ -107,7 +109,7 @@ export function Features() {
                         </div>
                         <div className="absolute inset-0 noise-bg opacity-30 mix-blend-overlay"></div>
 
-                        <div className="relative h-full w-full flex flex-col md:flex-row justify-between items-center text-center md:text-left p-10 lg:p-12 gap-8">
+                        <div className="relative h-full w-full flex flex-col md:flex-row justify-between items-center text-center md:text-left p-7 lg:p-12 gap-6 md:gap-8">
                             <div className="flex flex-col items-center md:items-start">
                                 <div className="w-16 h-16 rounded-[20px] bg-white/10 backdrop-blur-xl flex items-center justify-center mb-6 border border-white/20 shadow-2xl group-hover:scale-110 group-hover:bg-white/20 transition-all duration-700 relative overflow-hidden">
                                     <div className="absolute inset-0 bg-gradient-to-tr from-blue-400/20 to-transparent"></div>

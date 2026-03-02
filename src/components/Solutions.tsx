@@ -56,7 +56,7 @@ export function Solutions() {
     const activeContent = industries.find(i => i.id === activeTab) || industries[0];
 
     return (
-        <section id="solutions" className="py-32 bg-[#fafafa] border-y border-gray-100/80 overflow-hidden relative">
+        <section id="solutions" className="py-16 md:py-24 lg:py-32 bg-[#fafafa] border-y border-gray-100/80 overflow-hidden relative">
             <div className="absolute inset-0 noise-bg opacity-30"></div>
 
             <div className="max-w-[76rem] mx-auto px-6 lg:px-8 relative z-10">
@@ -67,7 +67,7 @@ export function Solutions() {
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            className="text-4xl md:text-[56px] font-bold tracking-tight text-[#09090b] mb-4 leading-[1.05]"
+                            className="text-3xl md:text-4xl lg:text-[56px] font-bold tracking-tight text-[#09090b] mb-4 leading-[1.05]"
                         >
                             What <br />
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-[#1DB0F2]">We Buy.</span>
@@ -114,8 +114,8 @@ export function Solutions() {
                     </motion.div>
                 </div>
 
-                <div className="bg-white rounded-[48px] p-5 lg:p-8 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.05)] border border-gray-200 flex flex-col lg:flex-row gap-8 lg:gap-16 min-h-[520px]">
-                    <div className="flex-1 py-8 px-6 lg:py-16 lg:px-12 flex flex-col justify-center">
+                <div className="bg-white rounded-[32px] lg:rounded-[48px] p-4 lg:p-8 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.05)] border border-gray-200 flex flex-col lg:flex-row gap-6 lg:gap-16 min-h-auto lg:min-h-[520px]">
+                    <div className="flex-1 py-6 px-4 lg:py-16 lg:px-12 flex flex-col justify-center">
                         <AnimatePresence mode="wait">
                             <motion.div
                                 key={activeTab}
@@ -150,7 +150,8 @@ export function Solutions() {
                         </AnimatePresence>
                     </div>
 
-                    <div className="flex-1 relative rounded-[36px] overflow-hidden bg-gray-100 shadow-inner group">
+                    {/* Rohan: aspect-video gives reliable height on mobile for absolute-positioned image */}
+                    <div className="w-full lg:flex-1 relative rounded-[28px] lg:rounded-[36px] overflow-hidden bg-gray-100 shadow-inner group aspect-video lg:aspect-auto lg:min-h-[400px]">
                         <AnimatePresence mode="wait">
                             <motion.img
                                 key={activeTab}

@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { ArrowRight, CheckCircle2, ShieldCheck, Zap } from 'lucide-react';
+import { trackWhatsAppClick } from '../utils/analytics';
 
 export function Hero() {
     return (
@@ -33,12 +34,12 @@ export function Hero() {
                             <span className="text-[13px] font-semibold text-[#09090b] tracking-wide relative top-[0.5px]">Acquiring Enterprise IT Assets</span>
                         </motion.div>
 
-                        <h1 className="text-[52px] md:text-[68px] lg:text-[80px] xl:text-[88px] font-bold tracking-tight text-[#09090b] mb-6 leading-[1.02]">
+                        <h1 className="text-[40px] sm:text-[52px] md:text-[68px] lg:text-[80px] xl:text-[88px] font-bold tracking-tight text-[#09090b] mb-6 leading-[1.02]">
                             Sell Your Used <br className="hidden lg:block" />
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-[#1DB0F2]">IT Equipment.</span>
                         </h1>
 
-                        <p className="text-[18px] md:text-[21px] text-gray-500 mb-10 leading-[1.6] max-w-[540px] font-normal">
+                        <p className="text-[16px] md:text-[18px] lg:text-[21px] text-gray-500 mb-10 leading-[1.6] max-w-[540px] font-normal">
                             Instantly convert your unused corporate laptops, high-end workstations, and IT infrastructure into capital. Secure, fast, and fully transparent.
                         </p>
 
@@ -47,6 +48,7 @@ export function Hero() {
                                 href="https://wa.me/918957575798"
                                 target="_blank"
                                 rel="noopener noreferrer"
+                                onClick={() => trackWhatsAppClick('hero')}
                                 className="w-full sm:w-auto px-8 py-4 bg-[#09090b] text-white rounded-[16px] font-bold text-[16px] hover:bg-gray-800 hover:-translate-y-0.5 transition-all duration-300 flex items-center justify-center gap-3 shadow-[0_4px_14px_rgba(0,0,0,0.1)] group"
                             >
                                 Get Your Quote
@@ -74,7 +76,7 @@ export function Hero() {
                     </motion.div>
 
                     {/* Right Column: Floating UI Composition */}
-                    <div className="lg:col-span-6 2xl:col-span-7 relative w-full h-[500px] lg:h-[640px] flex items-center justify-center lg:justify-end">
+                    <div className="lg:col-span-6 2xl:col-span-7 relative w-full h-[360px] sm:h-[450px] lg:h-[640px] flex items-center justify-center lg:justify-end">
                         <div className="relative w-full max-w-[560px] aspect-square">
 
                             {/* Main Background Image */}
@@ -98,7 +100,7 @@ export function Hero() {
                                 initial={{ opacity: 0, y: 30, x: -20 }}
                                 animate={{ opacity: 1, y: 0, x: 0 }}
                                 transition={{ duration: 0.8, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
-                                className="absolute top-[15%] left-0 md:-left-8 bg-white/95 backdrop-blur-xl border border-gray-200/80 p-4 rounded-[20px] shadow-[0_12px_32px_rgba(0,0,0,0.08)] flex items-center gap-4 w-auto min-w-[240px] z-20"
+                                className="absolute top-[15%] left-0 md:-left-8 bg-white/95 backdrop-blur-xl border border-gray-200/80 p-4 rounded-[20px] shadow-[0_12px_32px_rgba(0,0,0,0.08)] hidden sm:flex items-center gap-4 w-auto min-w-[240px] z-20"
                             >
                                 <div className="w-11 h-11 rounded-full bg-blue-50 flex items-center justify-center border border-blue-100 shrink-0">
                                     <span className="text-blue-600 font-bold text-[19px] relative top-[1px]">₹</span>
@@ -114,7 +116,7 @@ export function Hero() {
                                 initial={{ opacity: 0, y: 30, x: 20 }}
                                 animate={{ opacity: 1, y: 0, x: 0 }}
                                 transition={{ duration: 0.8, delay: 0.8, ease: [0.16, 1, 0.3, 1] }}
-                                className="absolute bottom-[20%] right-0 md:-right-6 bg-[#09090b]/95 backdrop-blur-xl border border-gray-800 p-4 rounded-[20px] shadow-[0_16px_40px_rgba(0,0,0,0.3)] flex items-center gap-3.5 w-auto min-w-[260px] z-20"
+                                className="absolute bottom-[20%] right-0 md:-right-6 bg-[#09090b]/95 backdrop-blur-xl border border-gray-800 p-4 rounded-[20px] shadow-[0_16px_40px_rgba(0,0,0,0.3)] hidden sm:flex items-center gap-3.5 w-auto min-w-[260px] z-20"
                             >
                                 <div className="w-10 h-10 rounded-full bg-green-500/20 flex items-center justify-center border border-green-500/30 shrink-0">
                                     <CheckCircle2 className="w-5 h-5 text-green-400" />

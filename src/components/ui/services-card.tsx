@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import { motion, useInView, type Variants } from "framer-motion";
-import { ArrowRight } from "lucide-react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 // Shadcn UI Carousel Imports
@@ -209,6 +209,33 @@ const CarouselNext = React.forwardRef<
 });
 CarouselNext.displayName = "CarouselNext";
 
+// Rohan: CarouselPrev — mirrors CarouselNext but scrolls backward
+const CarouselPrev = React.forwardRef<
+    HTMLButtonElement,
+    React.ComponentProps<typeof Button>
+>(({ className, variant = "outline", size = "icon", ...props }, ref) => {
+    const { scrollPrev, canScrollPrev } = useCarousel();
+    return (
+        <Button
+            ref={ref}
+            variant={variant}
+            size={size}
+            className={cn(
+                "absolute h-12 w-12 rounded-full",
+                "left-4 top-1/2 -translate-y-1/2",
+                className,
+            )}
+            onClick={scrollPrev}
+            disabled={!canScrollPrev}
+            {...props}
+        >
+            <ArrowLeft className="h-5 w-5" />
+            <span className="sr-only">Previous slide</span>
+        </Button>
+    );
+});
+CarouselPrev.displayName = "CarouselPrev";
+
 // --- Service Card & Carousel Section ---
 export interface Service {
     number: string;
@@ -323,8 +350,9 @@ export const ServiceCarousel = ({ services }: { services: Service[] }) => {
                     </CarouselContent>
                 </motion.div>
 
-                {/* Custom Styled Controls - Sanket */}
+                {/* Rohan: Left and right arrow controls, visible on carousel hover */}
                 <div className="hidden lg:block">
+                    <CarouselPrev className="bg-white/90 backdrop-blur-xl border border-gray-200 text-[#09090b] shadow-2xl hover:bg-white hover:scale-105 transition-all duration-300 opacity-0 group-hover/carousel:opacity-100 -left-6" />
                     <CarouselNext className="bg-white/90 backdrop-blur-xl border border-gray-200 text-[#09090b] shadow-2xl hover:bg-white hover:scale-105 transition-all duration-300 opacity-0 group-hover/carousel:opacity-100 -right-6" />
                 </div>
             </Carousel>
